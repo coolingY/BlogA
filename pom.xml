@@ -11,6 +11,7 @@
     <description>BlogA</description>
     <modules>
         <module>Framework</module>
+        <module>Admin</module>
     </modules>
     <!--    <modules>
             <module>sangeng-framework</module>
