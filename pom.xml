@@ -14,11 +14,6 @@
         <module>Admin</module>
         <module>Blog</module>
     </modules>
-    <!--    <modules>
-            <module>sangeng-framework</module>
-            <module>sangeng-admin</module>
-            <module>sangeng-blog</module>
-        </modules>-->
     <packaging>pom</packaging>
 
 
@@ -55,7 +50,7 @@
             <dependency>
                 <groupId>com.baomidou</groupId>
                 <artifactId>mybatis-plus-boot-starter</artifactId>
-                <version>3.4.3</version>
+                <version>3.4.3.4</version>
             </dependency>
 
             <!--阿里云OSS-->
