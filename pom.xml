@@ -12,6 +12,7 @@
     <modules>
         <module>Framework</module>
         <module>Admin</module>
+        <module>Blog</module>
     </modules>
     <!--    <modules>
             <module>sangeng-framework</module>
