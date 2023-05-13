@@ -20,3 +20,8 @@ mybatis-plus:
       logic-delete-value: 1
       logic-not-delete-value: 0
       id-type: auto
+
+oss:
+  accessKey: QgGg6lw-lXiQLwvfHt0ryOUpqkuKJ2aHW5xbOIVN
+  secretKey: P1WLfGSHgQLmo0dLxl0JI3r_3H2k4QLBuefJxUiL
+  bucket: coolingy
