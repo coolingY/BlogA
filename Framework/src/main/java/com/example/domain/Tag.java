@@ -1,5 +1,6 @@
 package com.example.domain;
 
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,32 +10,18 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * @TableName sys_user
+ * @TableName sg_tag
  */
-@TableName(value ="sys_user")
+@SuppressWarnings("serial")
+@TableName(value ="sg_tag")
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
-public class User implements Serializable {
+@AllArgsConstructor
+public class Tag implements Serializable {
+    @TableId   //!
     private Long id;
 
-    private String userName;
-
-    private String nickName;
-
-    private String password;
-
-    private String type;
-
-    private String status;
-
-    private String email;
-
-    private String phonenumber;
-
-    private String sex;
-
-    private String avatar;
+    private String name;
 
     private Long createBy;
 
@@ -45,6 +32,8 @@ public class User implements Serializable {
     private Date updateTime;
 
     private Integer delFlag;
+
+    private String remark;
 
     private static final long serialVersionUID = 1L;
 }

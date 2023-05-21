@@ -3,10 +3,7 @@ package com.example.controller;
 import com.example.domain.ResponseResult;
 import com.example.service.ArticleService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/article")
@@ -32,6 +29,11 @@ public class ArticleController {
 
 
         return   articleService.articleList(pageNum,pageSize,categoryId);
+    }
+
+    @PutMapping("/updateViewCount/{id}")
+    public ResponseResult updateViewCount(@PathVariable("id") Long id){
+        return articleService.updateViewCount(id);
     }
 
     @GetMapping("/{id}")

@@ -9,32 +9,24 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * @TableName sys_user
+ * @TableName sys_role
  */
-@TableName(value ="sys_user")
+@TableName(value ="sys_role")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class User implements Serializable {
+public class Role implements Serializable {
     private Long id;
 
-    private String userName;
+    private String roleName;
 
-    private String nickName;
+    private String roleKey;
 
-    private String password;
-
-    private String type;
+    private Integer roleSort;
 
     private String status;
 
-    private String email;
-
-    private String phonenumber;
-
-    private String sex;
-
-    private String avatar;
+    private String delFlag;
 
     private Long createBy;
 
@@ -44,7 +36,7 @@ public class User implements Serializable {
 
     private Date updateTime;
 
-    private Integer delFlag;
+    private String remark;
 
     private static final long serialVersionUID = 1L;
 }

@@ -9,7 +9,7 @@ import java.util.UUID;
  */
 public class PathUtils {
 
-    public static String generateFilePath(String fileName){
+    public static String generateFilePath(String fileName) {
         //根据日期生成路径   2022/1/15/
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd/");
         String datePath = sdf.format(new Date());

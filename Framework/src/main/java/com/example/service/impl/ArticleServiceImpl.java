@@ -11,10 +11,11 @@ import com.example.domain.vo.ArtcleDetailVo;
 import com.example.domain.vo.ArticleListVo;
 import com.example.domain.vo.HotArticleVo;
 import com.example.domain.vo.PageVo;
-import com.example.service.ArticleService;
 import com.example.mapper.ArticleMapper;
+import com.example.service.ArticleService;
 import com.example.service.CategoryService;
 import com.example.utils.BeanCopyUtils;
+import com.example.utils.RedisCache;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -33,6 +34,9 @@ public class ArticleServiceImpl extends ServiceImpl<ArticleMapper, Article>
 
     @Autowired
     private CategoryService categoryService;
+
+    @Autowired
+    private RedisCache redisCache;
 
 
     @Override
@@ -99,6 +103,9 @@ public class ArticleServiceImpl extends ServiceImpl<ArticleMapper, Article>
     public ResponseResult getArticleDetail(Long id) {
         //根据id查询文章
         Article article = getById(id);
+        //从redis中获取viewCount
+        Integer viewCount = redisCache.getCacheMapValue("article:viewCount", id.toString());
+        article.setViewCount(viewCount.longValue());
 
         //转换为VO
         ArtcleDetailVo artcleDetailVo = BeanCopyUtils.copyBean(article, ArtcleDetailVo.class);
@@ -111,6 +118,16 @@ public class ArticleServiceImpl extends ServiceImpl<ArticleMapper, Article>
 
         //封装返回
         return ResponseResult.okResult(artcleDetailVo);
+    }
+
+    @Override
+    public ResponseResult updateViewCount(Long id) {
+
+        redisCache.incrementCacheMapValue("article:viewCount",id.toString(),1);
+        /*Map<String, Integer> viewCountMap = redisCache.getCacheObject("article:viewCount");
+        System.out.println(viewCountMap);
+*/
+        return ResponseResult.okResult();
     }
 }
 

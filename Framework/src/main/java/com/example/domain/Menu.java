@@ -9,38 +9,40 @@ import lombok.experimental.Accessors;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 /**
- * @TableName sg_article
+ * @TableName sys_menu
  */
-@TableName(value ="sg_article")
+@TableName(value ="sys_menu")
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Accessors(chain = true)
-public class Article implements Serializable {
+public class Menu implements Serializable {
     private Long id;
 
-    private String title;
+    private String menuName;
 
-    private String content;
+    private Long parentId;
 
-    private String summary;
+    private Integer orderNum;
 
-    private Long categoryId;
+    private String path;
 
-    @TableField(exist = false)
-    private String categoryName;
+    private String component;
 
-    private String thumbnail;
+    private Integer isFrame;
 
-    private String isTop;
+    private String menuType;
+
+    private String visible;
 
     private String status;
 
-    private Long viewCount;
+    private String perms;
 
-    private String isComment;
+    private String icon;
 
     private Long createBy;
 
@@ -50,12 +52,14 @@ public class Article implements Serializable {
 
     private Date updateTime;
 
-    private Integer delFlag;
+    private String remark;
+
+    private String delFlag;
 
     private static final long serialVersionUID = 1L;
 
-    public Article(Long id, long viewCount) {
-        this.id=id;
-        this.viewCount=viewCount;
-    }
+    @TableField(exist = false)
+    private List<Menu> children;
+
+
 }
