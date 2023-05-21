@@ -2,9 +2,7 @@ package com.example.exception;
 
 import com.example.enums.AppHttpCodeEnum;
 
-/**
- * @Author 三更  B站： https://space.bilibili.com/663528522
- */
+
 public class SystemException extends RuntimeException{
 
     private int code;
