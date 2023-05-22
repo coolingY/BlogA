@@ -26,10 +26,11 @@ public class BlogLoginServiceImpl implements BlogLoginService {
     @Autowired
     private RedisCache redisCache;
 
-     System.out.println("Hello,GitHub!");
+    
     @Override
     public ResponseResult login(User user) {
         System.out.println("Hello,IDEA!");
+        System.out.println("Hello,GitHub!");
 
         UsernamePasswordAuthenticationToken authenticationToken=new UsernamePasswordAuthenticationToken(user.getUserName(),user.getPassword());
         Authentication authenticate = authenticationManager.authenticate(authenticationToken);
