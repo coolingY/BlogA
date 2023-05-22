@@ -29,7 +29,7 @@ public class BlogLoginServiceImpl implements BlogLoginService {
     @Override
     public ResponseResult login(User user) {
 
-        System.out.println("Hello,IDEA,BBB!");
+        System.out.println("Hello,IDEA,AAA,BBB!");
         System.out.println("Hello,GitHub!");
         UsernamePasswordAuthenticationToken authenticationToken=new UsernamePasswordAuthenticationToken(user.getUserName(),user.getPassword());
         Authentication authenticate = authenticationManager.authenticate(authenticationToken);
