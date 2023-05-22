@@ -28,6 +28,7 @@ public class BlogLoginServiceImpl implements BlogLoginService {
 
     @Override
     public ResponseResult login(User user) {
+        System.out.println("AAA");
 
 
         UsernamePasswordAuthenticationToken authenticationToken=new UsernamePasswordAuthenticationToken(user.getUserName(),user.getPassword());
