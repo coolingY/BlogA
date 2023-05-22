@@ -26,6 +26,7 @@ public class BlogLoginServiceImpl implements BlogLoginService {
     @Autowired
     private RedisCache redisCache;
 
+     System.out.println("Hello,GitHub!");
     @Override
     public ResponseResult login(User user) {
         System.out.println("Hello,IDEA!");
