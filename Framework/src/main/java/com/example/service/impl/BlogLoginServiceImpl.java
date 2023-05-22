@@ -16,7 +16,6 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
-import java.util.HashMap;
 import java.util.Objects;
 
 @Service
@@ -29,6 +28,7 @@ public class BlogLoginServiceImpl implements BlogLoginService {
 
     @Override
     public ResponseResult login(User user) {
+        System.out.println("Hello,IDEA!");
 
         UsernamePasswordAuthenticationToken authenticationToken=new UsernamePasswordAuthenticationToken(user.getUserName(),user.getPassword());
         Authentication authenticate = authenticationManager.authenticate(authenticationToken);
