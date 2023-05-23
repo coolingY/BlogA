@@ -31,6 +31,7 @@ public class BlogLoginServiceImpl implements BlogLoginService {
 
 
         System.out.println("A");
+        System.out.println("B");
         UsernamePasswordAuthenticationToken authenticationToken=new UsernamePasswordAuthenticationToken(user.getUserName(),user.getPassword());
         Authentication authenticate = authenticationManager.authenticate(authenticationToken);
         if(Objects.isNull(authenticate)){
